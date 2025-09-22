@@ -43,7 +43,7 @@ export default function Support() {
                 friendly team.
               </p>
               <Link
-                href={`/page-contact`}
+                href={`/contact`}
                 className="btn btn-md btn-primary rounded-default text-white shadow-xs mt-1 lg:mt-2"
               >
                 Get in touch

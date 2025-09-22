@@ -1,7 +1,13 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 export default function Breadcumb() {
+  const pathname = usePathname();
+  const pathSegments = pathname.split('/').filter((segment) => segment);
+
   return (
     <div
       style={{ marginTop: "80px" }}
@@ -21,12 +27,24 @@ export default function Breadcumb() {
           <li>
             <Link href={`/`}>Home</Link>
           </li>
-          <li>
-            <i className="unicon-chevron-right fw-medium opacity-50 rtl:rotate-180" />
-          </li>
-          <li>
-            <span className="opacity-50">Sign in</span>
-          </li>
+          {pathSegments.map((segment, index) => {
+            const href = `/${pathSegments.slice(0, index + 1).join('/')}`;
+            const isLast = index === pathSegments.length - 1;
+            return (
+              <React.Fragment key={href}>
+                <li>
+                  <i className="unicon-chevron-right fw-medium opacity-50 rtl:rotate-180" />
+                </li>
+                <li>
+                  {isLast ? (
+                    <span className="opacity-50">{segment}</span>
+                  ) : (
+                    <Link href={href}>{segment}</Link>
+                  )}
+                </li>
+              </React.Fragment>
+            );
+          })}
         </ul>
       </div>
     </div>

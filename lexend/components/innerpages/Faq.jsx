@@ -25,7 +25,7 @@ export default function Faq() {
                     Please{" "}
                     <Link
                       className="uc-link border-bottom border-gray-300 dark:text-white text-none"
-                      href={`/page-contact`}
+                      href={`/contact`}
                       style={{ paddingBottom: 2 }}
                     >
                       Chat to our friendly team.

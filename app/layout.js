@@ -5,7 +5,7 @@ import "../public/assets/custom.scss";
 import "react-modal-video/scss/modal-video.scss";
 import "photoswipe/dist/photoswipe.css";
 import "rc-slider/assets/index.css";
-
+import Cart from "@/components/common/Cart";
 import { useEffect } from "react";
 import anime from "animejs";
 import { usePathname } from "next/navigation";
@@ -108,10 +108,9 @@ export default function RootLayout({ children }) {
           <ContactModal />
           <NewsletterModal />
           <SearchModal />
-
+          <Cart />
           <BacktoTop />
         </Context>
-        <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script> {/* Added script */}
       </body>
     </html>
   );

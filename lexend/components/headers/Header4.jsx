@@ -55,7 +55,7 @@ export default function Header4() {
                       <Link href={`/page-terms`}>Terms and conditions</Link>
                     </li>
                     <li>
-                      <Link href={`/page-contact`}>
+                      <Link href={`/contact`}>
                         <span>Hire an Expert</span>
                         <i className="fs-8 unicon-arrow-up-right fw-bold ms-narrow rtl:-rotate-90" />
                       </Link>
@@ -122,7 +122,7 @@ export default function Header4() {
                 </ul>
                 <Link
                   className="btn btn-md btn-primary rounded-default lg:px-3 text-none shadow-xs d-none lg:d-inline-flex"
-                  href={`/page-contact`}
+                  href={`/contact`}
                 >
                   Send inquiry
                 </Link>

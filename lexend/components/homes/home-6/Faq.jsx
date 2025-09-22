@@ -30,7 +30,7 @@ export default function Faq() {
                     for thier businesses.
                   </p>
                   <Link
-                    href={`/page-contact`}
+                    href={`/contact`}
                     className="btn btn-sm lg:btn-md btn-primary px-3 mt-2"
                   >
                     <span>Still have a question?</span>

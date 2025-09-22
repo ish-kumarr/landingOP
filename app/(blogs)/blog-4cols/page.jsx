@@ -1,6 +1,6 @@
 import ContactHeader from "@/components/headers/ContactHeader";
 
-import Footer2 from "@/components/footers/Footer2";
+import Footer5 from "@/components/footers/Footer5";
 import Newsletter from "@/components/blog/Newsletter";
 import BreadCumb from "@/components/blog/BreadCumb";
 import Blogs5 from "@/components/blog/Blogs5";
@@ -20,7 +20,7 @@ export default function Blog4ColsPage() {
           <Blogs5 />
           <Newsletter />
         </div>
-        <Footer2 />
+        <Footer5 />
       </div>
     </>
   );

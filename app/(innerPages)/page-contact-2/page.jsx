@@ -1,7 +1,7 @@
-import Header2 from "@/components/headers/Header2";
+import ContactHeader from "@/components/headers/ContactHeader";
 
 import Footer5 from "@/components/footers/Footer5";
-import Faq from "@/components/homes/home-2/Faq";
+import OutreachFaq from "@/components/homes/OutreachFaq";
 import Brands from "@/components/common/Brands2";
 import Blogs from "@/components/homes/home-2/Blogs";
 import Contact2 from "@/components/innerpages/Contact2";
@@ -16,12 +16,13 @@ export default function ContactPage2() {
   return (
     <>
       <div className="page-wrapper uni-body panel bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200 overflow-x-hidden bp-xs bp-sm bp-md bp-lg bp-xl bp-xxl dom-ready">
-        <Header2 />
+        <ContactHeader />
         <div id="wrapper" className="wrap">
+
           <Contact2 />
 
           <ContactLinks2 />
-          <Faq />
+          <OutreachFaq />
           <div
             id="clients_brands"
             className="clients-brands section panel overflow-hidden"
@@ -43,6 +44,7 @@ export default function ContactPage2() {
               </div>
             </div>
           </div>
+
           <Blogs />
         </div>
         <Footer5 />

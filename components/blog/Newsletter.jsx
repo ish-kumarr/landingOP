@@ -1,6 +1,42 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
+
 export default function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage("");
+
+    if (!email) {
+      setMessage("Email is required.");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage(data.message);
+        setEmail("");
+      } else {
+        setMessage(data.message);
+      }
+    } catch (error) {
+      setMessage("Failed to subscribe. Please try again later.");
+    }
+  };
+
   return (
     <div
       id="blog_newsletter"
@@ -21,23 +57,29 @@ export default function Newsletter() {
                     top revenue content to help you send docs faster.
                   </p>
                   <form
-                    onSubmit={(e) => e.preventDefault()}
+                    onSubmit={handleSubmit}
                     className="row child-cols g-1 mt-1 xl:mt-2"
                   >
                     <div>
                       <input
                         className="form-control h-48px xl:h-56px w-full bg-white dark:border-white dark:bg-opacity-10 dark:border-opacity-0 dark:text-white"
-                        type="text"
+                        type="email"
                         placeholder="Your email address"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                       />
                     </div>
                     <div className="col-12 sm:col-auto">
-                      <button className="btn btn-md h-48px xl:h-56px w-100 lg:min-w-150px xl:min-w-200px btn-primary text-white">
+                      <button
+                        type="submit"
+                        className="btn btn-md h-48px xl:h-56px w-100 lg:min-w-150px xl:min-w-200px btn-primary text-white"
+                      >
                         Subscribe
                       </button>
                     </div>
                   </form>
+                  {message && <p className="fs-7 text-dark dark:text-white text-opacity-70">{message}</p>}
                   <p className="fs-7 text-dark dark:text-white text-opacity-70">
                     Don't worry we don't spam.
                   </p>

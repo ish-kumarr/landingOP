@@ -4,9 +4,9 @@ import Footer5 from "@/components/footers/Footer5";
 import CareerHero from "@/components/innerpages/CareerHero";
 import CareerBenefits from "@/components/innerpages/CareerBenefits";
 import CareerOpenings from "@/components/innerpages/CareerOpenings";
-import Feedback from "@/components/homes/home-2/Feedback";
+import OutreachFaq from "@/components/homes/OutreachFaq";
 import Brands from "@/components/innerpages/Brands";
-import Blogs from "@/components/homes/home-2/Blogs";
+import Blog from "@/components/homes/home-3/Blog";
 export const metadata = {
   title:
     "Career || Lexend - Full-featured, professional-looking software, saas and startup nextjs template.",
@@ -19,12 +19,13 @@ export default function CareerPage() {
       <div className="page-wrapper uni-body panel bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200 overflow-x-hidden bp-xs bp-sm bp-md bp-lg bp-xl bp-xxl dom-ready">
         <ContactHeader />
         <div id="wrapper" className="wrap">
+
           <CareerHero />
           <CareerBenefits />
           <CareerOpenings />
-          <Feedback />
+          <OutreachFaq />
           <Brands />
-          <Blogs />
+          <Blog />
         </div>
         <Footer5 />
       </div>

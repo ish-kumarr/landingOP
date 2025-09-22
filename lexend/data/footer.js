@@ -6,8 +6,8 @@ export const footerLinks = [
       { href: "/page-features", label: "Features" },
       { href: "/page-integrations", label: "Integrations" },
       { href: "/page-career", label: "Career" },
-      { href: "/page-contact", label: "Contact" },
-      { href: "/page-contact-2", label: "Contact v2" },
+      { href: "/contact", label: "Contact" },
+      { href: "/contact-2", label: "Contact v2" },
     ],
   },
   {
@@ -53,8 +53,8 @@ export const footerLinks2 = [
       { href: "/page-pricing", label: "Pricing" },
       { href: "/page-about", label: "About" },
       { href: "/page-career", label: "Career" },
-      { href: "/page-contact", label: "Contact" },
-      { href: "/page-contact-2", label: "Contact v2" },
+      { href: "/contact", label: "Contact" },
+      { href: "/contact-2", label: "Contact v2" },
     ],
   },
   {
@@ -112,8 +112,8 @@ export const footerLinks3 = [
       { href: "/page-features", label: "Features" },
       { href: "/page-integrations", label: "Solutions" },
       { href: "/page-career", label: "Tutorials" },
-      { href: "/page-contact", label: "Pricing" },
-      { href: "/page-contact-2", label: "Releases" },
+      { href: "/contact", label: "Pricing" },
+      { href: "/contact-2", label: "Releases" },
     ],
   },
   {
