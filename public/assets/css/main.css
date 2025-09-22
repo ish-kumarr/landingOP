@@ -1,0 +1,131 @@
+:root {
+  --color-primary-light: #4F9276; /* Custom green */
+}
+
+.hover-bg-custom-light-green:hover {
+  background-color: var(--color-primary-light) !important; /* Use !important to override Tailwind's default */
+}
+
+/* Import uni-core components */
+@import url("./uni-core.min.css");
+
+/* Import additional styles */
+@import url("./unicons.min.css");
+@import url("./prettify.min.css");
+@import url("./swiper-bundle.min.css");
+
+/* Import main style */
+@import url("./theme/main.min.purge.css");
+@import "swiper/css/virtual";
+@import "swiper/css";
+@import "swiper/css/thumbs";
+@import "swiper/css/effect-fade";
+
+/* Import uni-core components */
+@import url("./uni-core.min.css");
+
+/* Import additional styles */
+@import url("./unicons.min.css");
+@import url("./prettify.min.css");
+@import url("./swiper-bundle.min.css");
+
+/* Import main style */
+@import url("./theme/main.min.purge.css");
+@import "swiper/css/virtual";
+@import "swiper/css";
+@import "swiper/css/thumbs";
+@import "swiper/css/effect-fade";
+
+.shimmer-text {
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.shimmer-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: translateX(-100%);
+  border-radius: inherit; /* This is the key */
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer-once {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer .shimmer-overlay {
+  animation: shimmer-once 1.5s linear;
+}
+
+.shimmer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%);
+  transform: translateX(-100%);
+  border-radius: inherit;
+}
+
+.animated-text-enter {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: fade-slide-in 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+.animated-text-exit {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fade-slide-up 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

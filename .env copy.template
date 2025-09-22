@@ -1,0 +1,12 @@
+EMAIL_USER=
+EMAIL_PASS=
+CONTACT_FORM_RECIPIENT=
+
+# MongoDB Configuration
+MONGODB_URI= mongodb+srv://ishkumar:Arin123123123@dbmain.iu4bkgk.mongodb.net/?retryWrites=true&w=majority&appName=dbmain
+MONGODB_DB_NAME= dbmain
+
+# Google Sheets API Configuration
+GOOGLE_SHEET_ID= # The ID of your Google Sheet (found in the URL)
+GOOGLE_SERVICE_ACCOUNT_EMAIL= # The email of your Google service account
+GOOGLE_PRIVATE_KEY= # The private key for your Google service account (ensure to replace \n with actual newlines if copied from a single line)

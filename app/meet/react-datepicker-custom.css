@@ -1,0 +1,206 @@
+/* Custom styles for react-datepicker to mimic Calendly */
+
+.react-datepicker {
+  border: 1px solid #e0e0e0;
+  font-family: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex; /* For side-by-side calendar and time */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  background-color: white;
+}
+
+.react-datepicker__month-container {
+  padding: 15px; /* Increased padding */
+  flex-grow: 1;
+  border-right: 1px solid #eee; /* Separator line */
+}
+
+.react-datepicker__header {
+  background-color: white; /* White background for header */
+  border-bottom: none; /* Remove border */
+  padding-top: 0; /* Remove top padding */
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px; /* Add some bottom padding */
+}
+
+.react-datepicker__current-month {
+  font-weight: bold;
+  font-size: 1.2em; /* Larger font size */
+  color: #333;
+}
+
+.react-datepicker__day-name {
+  color: #757575; /* Gray for day names */
+  font-size: 0.9em;
+}
+
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+  top: 15px; /* Adjust position */
+  border: none; /* Remove border */
+  background: none; /* Remove background */
+  cursor: pointer;
+  padding: 0; /* Remove padding */
+  font-size: 1.5em; /* Larger arrows */
+  color: #007bff; /* Blue for navigation arrows */
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: #007bff; /* Blue for navigation arrows */
+  border-width: 2px 2px 0 0; /* Thicker arrows */
+  top: 0; /* Adjust position */
+}
+
+.react-datepicker__navigation--previous .react-datepicker__navigation-icon::before {
+  transform: rotate(-135deg); /* Rotate for left arrow */
+  left: -7px;
+}
+
+.react-datepicker__navigation--next .react-datepicker__navigation-icon::before {
+  transform: rotate(45deg); /* Rotate for right arrow */
+  left: -7px;
+}
+
+.react-datepicker__day {
+  width: 36px; /* Fixed width for circular days */
+  height: 36px;
+  line-height: 36px; /* Center text vertically */
+  margin: 2px; /* Small margin between days */
+  border-radius: 50%; /* Circular shape */
+  display: inline-flex; /* Use flex for centering content */
+  justify-content: center;
+  align-items: center;
+  color: #333; /* Default text color */
+  font-size: 0.9em;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #007bff; /* Primary Blue for selected date */
+  color: white;
+  font-weight: bold;
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.react-datepicker__day--in-range,
+.react-datepicker__day--in-selecting-range {
+  background-color: #cce5ff; /* Lighter blue for range */
+  color: #333;
+}
+
+.react-datepicker__day--today {
+  font-weight: bold;
+  border: 1px solid #007bff; /* Blue border for today */
+  color: #007bff;
+}
+
+.react-datepicker__day:hover {
+  background-color: #f0f8ff; /* Very light blue on hover */
+}
+
+.react-datepicker__day--outside-month {
+  color: #ccc;
+}
+
+/* Styling for available days (blue tone light background) */
+.react-datepicker__day:not(.react-datepicker__day--outside-month):not(.react-datepicker__day--selected):not(.react-datepicker__day--disabled):not(.react-datepicker__day--today) {
+  background-color: #e0f2f7; /* Light blue background for available days */
+  color: #2196F3; /* Darker blue text for available days */
+}
+
+.react-datepicker__day:not(.react-datepicker__day--outside-month):not(.react-datepicker__day--selected):not(.react-datepicker__day--disabled):not(.react-datepicker__day--today):hover {
+  background-color: #B3E5FC; /* Slightly darker blue on hover */
+}
+
+/* Time selection styling */
+.react-datepicker__time-container {
+  border-left: 1px solid #e0e0e0;
+  width: 180px; /* Wider for time slots */
+  overflow-y: auto; /* Enable scrolling for time slots */
+}
+
+.react-datepicker__time-container .react-datepicker__time {
+  padding: 15px; /* Increased padding */
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: auto; /* Let content define height */
+  max-height: 300px; /* Max height for scroll */
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+  padding: 10px 15px; /* Increased padding */
+  cursor: pointer;
+  color: #007bff; /* Blue tone for time slots text */
+  border: 1px solid #BBDEFB; /* Light blue border */
+  border-radius: 4px;
+  margin-bottom: 8px; /* More space between slots */
+  text-align: center;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
+  background-color: #007bff; /* Primary Blue for selected time */
+  color: white;
+  font-weight: bold;
+  border-color: #007bff;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item:hover {
+  background-color: #f0f8ff; /* Very light blue on hover */
+  border-color: #007bff;
+}
+
+/* Time zone selection styling */
+.react-datepicker__timezone-row {
+  padding: 15px; /* Increased padding */
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.react-datepicker__timezone-row p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.react-datepicker__timezone-row svg {
+  color: #007bff; /* Blue globe icon */
+}
+
+.react-datepicker__timezone-row select {
+  width: auto; /* Adjust width */
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.9em;
+  color: #555;
+  appearance: none; /* Remove default arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2C114.3L146.2%2C255.1L5.4%2C114.3c-7.8-7.8-7.8-20.5%2C0-28.3c7.8-7.8%2C20.5-7.8%2C28.3%2C0l112.5%2C112.5l112.5-112.5c7.8-7.8%2C20.5-7.8%2C28.3%2C0C294.8%2C93.8%2C294.8%2C106.5%2C287%2C114.3z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  padding-right: 25px; /* Space for custom arrow */
+}
+
+/* Hide scrollbar for Calendly widget */
+.calendly-inline-widget::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+.calendly-inline-widget {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
